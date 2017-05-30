@@ -1,0 +1,34 @@
+CREATE KEYSPACE grad WITH replication = {'class': 'SimpleStrategy','replication_factor' : 1};
+use grad;
+
+CREATE table students( 
+		id int PRIMARY KEY, 
+		name text,
+		age int, 
+		dir text, 
+		colors set<text>, 
+		accounts list<float>, 
+		pets set<frozen<map<text, text>>>);
+
+DROP table students;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (1, 25, 'alejandro', 'martin carrera 58-13', {'green', 'black', 'red'}, [6000, 7000, 8000, 9000, 10000], {{'nombre':'docker', 'especie':'pez', 'raza':'payaso', 'age': '1'}, {'nombre':'ubuntu', 'especie':'pinguino', 'raza': 'emperador', 'age': '8'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (2, 18, 'iris', 'martin carrera, valentin canalizo 67', {'blue', 'yellow', 'green', 'white'}, [5000, 2000, 3000, 4000, 2000], {{'nombre':'max', 'especie':'perro', 'raza':'pastor aleman', 'age': '7'},{'nombre':'chuke', 'especie':'perro', 'raza':'salchicha', 'age': '8'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (3, 26, 'andres', 'salvador diaz miron 69', {'gray', 'pink', 'blue', 'red', 'white'}, [3000, 8000, 11000], {{'nombre':'spike', 'especie':'tortuga', 'raza':'tierra', 'age': '101'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (4, 28, 'hugo', 'ferrocaril hidalgo 104', {'pink', 'blue', 'green'}, [5000, 9000, 10000], {{'nombre':'ron', 'especie':'gato', 'raza':'payaso', 'age': '3'},{'nombre':'perro', 'especie':'perro', 'raza':'dobberman', 'age': '5'},{'nombre':'tweety', 'especie':'ave', 'raza':'canario', 'age': '6'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (5, 22, 'miguel', 'pedro negrete 456', {'green', 'black', 'red'}, [1000, 2000, 3000, 4000], {{'nombre':'milo', 'specie':'oso', 'raza':'pardo', 'age': '18'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (6, 19, 'jessica', 'mariquita sanchez 22', {'blue', 'gray', 'brown'}, [2000, 7000, 3000], {{'nombre':'lucas', 'especie':'ave', 'raza':'perico', 'age': '6'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (7, 25, 'sasha', 'mariquita sanchez 22', {'pink', 'blue', 'yellow'}, [6000, 7000, 8000, 9000], {{'nombre':'lucas', 'especie':'ave', 'raza':'perico', 'age': '6'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (8, 28, 'james', 'filadelfia 123', {'black', 'white', 'gray'}, [10000, 11000, 12000], {{'nombre':'zoo', 'especie':'ave', 'raza':'tucan', 'age': '3'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (9, 31, 'sakura', 'av. san lucas 1001', {'pink', 'black', 'blue', 'green'}, [11000, 5000, 20000], {{'nombre':'shu', 'especie':'gato', 'raza':'siames', 'age': '11'}}) USING TTL 604800;
+
+insert INTO students(id, age, name, dir, colors, accounts, pets) VALUES (10, 24, 'jorge', 'av patriotismo 5-12', {'red', 'black', 'white'}, [4000, 5000, 8000, 9000], {{'nombre':'robert', 'especie':'perro', 'raza':'dalmata', 'age': '5'},{'nombre':'lili', 'especie':'perro', 'raza':'chichuahua', 'age': '4'}}) USING TTL 604800;
+

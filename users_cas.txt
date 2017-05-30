@@ -1,0 +1,59 @@
+CREATE KEYSPACE grad WITH replication = {'class': 'SimpleStrategy','replication_factor' : 1};
+use grad;
+
+CREATE table users( 
+		id int PRIMARY KEY, 
+		name text,
+		age int, 
+		type int, 
+		status text,
+		favorites map<text, text>, 
+		finished list<float>, 
+		badges set<text>,
+		points list<frozen<map<text, float>>>);
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (1, 'sue', 19, 1, 'P', { 'artist': 'Picasso', 'food': 'pizza' }, [ 17, 3 ], { 'blue', 'black' },[{ 'points': 85, 'bonus': 20 }, { 'points': 85, 'bonus': 10 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (2, 'bob', 42, 1, 'A', { 'artist': 'Miro', 'food': 'meringue' }, [ 11, 25 ], { 'green' },[{ 'points': 85, 'bonus': 20 }, { 'points': 64, 'bonus': 12 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (3, 'ahn', 22, 2, 'A', { 'artist': 'Cassatt', 'food': 'cake' }, [ 6 ], { 'blue', 'red' },[{ 'points': 81, 'bonus': 8 }, { 'points': 55, 'bonus': 20 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (4, 'xi', 34, 2, 'D', { 'artist': 'Chagall', 'food': 'chocolate' }, [ 5, 11 ], { 'red', 'black' },[{ 'points': 53, 'bonus': 15 }, { 'points': 51, 'bonus': 15 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (5, 'xyz', 23, 2, 'D', { 'artist': 'Noguchi', 'food': 'nougat' }, [ 14, 6 ], { 'orange' },[{ 'points': 71, 'bonus': 20 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (6, 'abc', 43, 2, 'A', { 'artist': 'Picasso', 'food': 'pizza' }, [ 18, 12 ], { 'black', 'blue' },[{ 'points': 78, 'bonus': 8 }, { 'points': 57, 'bonus': 7 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (7, 'alejandro', 26, 2, 'A', { 'artist': 'Milo', 'food': 'sushi' }, [ 12, 4 ], { 'white', 'green', 'blue' },[{ 'points': 85, 'bonus': 20 }, { 'points': 54, 'bonus': 11 },{ 'points': 99, 'bonus': 16 }, { 'points': 34, 'bonus': 18 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (8, 'andrea', 22, 3, 'A', { 'artist': 'Michael', 'food': 'chocolate' }, [ 16, 23 ], { 'red' },[{ 'points': 89, 'bonus': 18 }, { 'points': 89, 'bonus': 14 },{ 'points': 89, 'bonus': 14 }]) USING TTL 604800; 
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (9, 'rudolf', 32, 4, 'B', { 'artist': 'Robert', 'food': 'pizza' }, [ 6,4,6], { 'blue', 'red', 'green','gray'},[{ 'points': 13, 'bonus': 18 }, { 'points': 23, 'bonus': 11 },{ 'points': 13, 'bonus': 18 }, { 'points': 23, 'bonus': 21 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (10, 'wow', 31, 3, 'A', { 'artist': 'Chong', 'food': 'hot-cakes' }, [5, 11], { 'red', 'black'},[{ 'points': 65, 'bonus': 12 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (11, 'grey', 23, 3, 'D', { 'artist': 'Ranma', 'food': 'eggs' }, [ 14, 6], { 'orange', 'red', 'black','blue'},[{ 'points': 78, 'bonus': 30 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (12, 'leonidasin', 28, 1, 'A', { 'artist': 'Pikachu', 'food': 'sausaches' }, [ 18, 12], { 'green', 'red', 'purple','blue', 'gray','white'},[{ 'points': 58, 'bonus': 18 },{ 'points': 57, 'bonus': 17 },{ 'points': 48, 'bonus': 18 },{ 'points': 57, 'bonus': 17 },{ 'points': 48, 'bonus': 18 },{ 'points': 70, 'bonus': 18 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (13, 'iris', 22, 5, 'C', { 'artist': 'Cuno', 'food': 'wine' }, [11, 3], { 'green', 'white', 'black'},[{ 'points': 98, 'bonus': 20 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (14, 'robert', 100, 5, 'C', { 'artist': 'bruce', 'food': 'chetoos' }, [18, 12, 12, 11], { 'pink', 'red', 'gray', 'white'},[{ 'points': 68, 'bonus': 13 },{ 'points': 77, 'bonus': 13 },{ 'points': 78, 'bonus': 14 },{ 'points': 67, 'bonus': 17 },{ 'points': 78, 'bonus': 18 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (15, 'robert', 19, 2, 'E', { 'artist': 'Achu', 'food': 'cocacola' }, [14, 6], { 'yellow', 'pink', 'red'},[{ 'points': 78, 'bonus': 30 }]) USING TTL 604800;
+
+insert INTO users(id, name, age, type, status, favorites, finished, badges, points) VALUES (16, 'saira', 24, 4, 'C', { 'artist': 'beatles', 'food': 'pig' }, [38, 22, 21, 23], {'blue', 'red', 'purple', 'pink' , 'orange', 'white'},[{ 'points': 48, 'bonus': 11 },{ 'points': 47, 'bonus': 11 },{ 'points': 28, 'bonus': 11 },{ 'points': 87, 'bonus': 11 },{ 'points': 88, 'bonus': 11 }]) USING TTL 604800;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

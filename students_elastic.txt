@@ -1,0 +1,84 @@
+# localhost 9200
+# http://localhost:9200/leon/students/_search?pretty
+
+curl -XPUT 'localhost:9200/leon/students/1?pretty' -d '{
+	"name": "alejandro", 
+	"age": 25,
+	"dir": "martin carrera 58-13",
+	"colors": ["green", "black", "red"],
+	"accounts": [6000, 7000, 8000, 9000, 10000],
+	"pets": [{"nombre":"docker", "especie":"pez", "raza":"payaso", "age": 1},{"nombre":"ubuntu", "especie":"pinguino", "raza": "emperador", "age": 8}]}'
+
+curl -XPUT 'localhost:9200/leon/students/2?pretty' -d '{
+	"name": "iris", 
+	"age": 18,
+	"dir": "martin carrera, valentin canalizo 67",
+	"colors": ["blue", "yellow", "green", "white"],
+	"accounts": [5000, 2000, 3000, 4000, 2000],
+	"pets": [{"nombre":"max", "especie":"perro", "raza":"pastor aleman", "age": 7},{"nombre":"chuke", "especie":"perro", "raza":"salchicha", "age": 8}]}'
+
+curl -XPUT 'localhost:9200/leon/students/3?pretty' -d '{
+	"name": "andres", 
+	"age": 26,
+	"dir": "salvador diaz miron 69",
+	"colors": ["gray", "pink", "blue", "red", "white"],
+	"accounts": [3000, 8000, 11000],
+	"pets": [{"nombre":"spike", "especie":"tortuga", "raza":"tierra", "age": 101}]}'
+
+curl -XPUT 'localhost:9200/leon/students/4?pretty' -d '{
+	"name": "hugo", 
+	"age": 28,
+	"dir": "ferrocaril hidalgo 104",
+	"colors": ["pink", "blue", "red"],
+	"accounts": [5000, 9000, 10000],
+	"pets": [{"nombre":"ron", "especie":"gato", "raza":"payaso", "age": 3},{"nombre":"perro", "especie":"perro", "raza":"dobberman", "age": 5},{"nombre":"tweety", "especie":"ave", "raza":"canario", "age": 6}]}'
+
+curl -XPUT 'localhost:9200/leon/students/5?pretty' -d '{
+	"name": "miguel", 
+	"age": 22,
+	"dir": "pedro negrete 456",
+	"colors": ["green", "black", "red"],
+	"accounts": [1000, 2000, 3000, 4000],
+	"pets": [{"nombre":"milo", "especie":"oso", "raza":"pardo", "age": 18}]}'
+
+curl -XPUT 'localhost:9200/leon/students/6?pretty' -d '{
+	"name": "jessica", 
+	"age": 19,
+	"dir": "mariquita sanchez 22",
+	"colors": ["blue", "gray", "brown"],
+	"accounts": [2000, 7000, 3000],
+	"pets": [{"nombre":"lucas", "especie":"ave", "raza":"perico", "age": 6}]}'
+
+curl -XPUT 'localhost:9200/leon/students/7?pretty' -d '{
+	"name": "sasha", 
+	"age": 25,
+	"dir": "av. simepre viva 34-4",
+	"colors": ["pink", "blue", "yellow"],
+	"accounts": [6000, 7000, 8000, 9000],
+	"pets": [{"nombre":"lilo", "especie":"gato", "raza":"persa", "age": 9},{"nombre":"ruber", "especie":"gato", "raza":"persa", "age": 9}]}'
+
+curl -XPUT 'localhost:9200/leon/students/8?pretty' -d '{
+	"name": "james", 
+	"age": 31,
+	"dir": "filadelfia 123",
+	"colors": ["black", "white", "gray"],
+	"accounts": [10000, 11000, 12000],
+	"pets": [{"nombre":"zoo", "especie":"ave", "raza":"tucan", "age": 3}]}'
+
+curl -XPUT 'localhost:9200/leon/students/9?pretty' -d '{
+	"name": "sakura", 
+	"age": 28,
+	"dir": "av. san lucas 1001",
+	"colors": ["pink", "black", "blue", "green"],
+	"accounts": [11000, 5000, 20000],
+	"pets": [{"nombre":"shu", "especie":"gato", "raza":"siames", "age": 11}]}'
+
+curl -XPUT 'localhost:9200/leon/students/10?pretty' -d '{
+	"name": "jorge", 
+	"age": 24,
+	"dir": "av patriotismo 5-12",
+	"colors": ["red", "black", "white"],
+	"accounts": [4000, 5000, 8000, 9000],
+	"pets": [{"nombre":"robert", "especie":"perro", "raza":"dalmata", "age": 5},{"nombre":"lili", "especie":"perro", "raza":"chihuahua", "age": 4}]}'
+
+
