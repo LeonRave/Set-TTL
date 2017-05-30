@@ -1,2 +1,2 @@
 # Set-TTL
-Uso de seteo en mongo, elastic y cassandra
+Uso de TTL en mongo, elastic y cassandra
